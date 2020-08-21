@@ -18,12 +18,12 @@
         <androidx.cardview.widget.CardView
             android:layout_width="0dp"
             android:layout_height="240dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginEnd="4dp"
+            android:layout_marginBottom="4dp"
             android:elevation="2dp"
-            app:cardCornerRadius="8dp"
+            app:cardCornerRadius="2dp"
             app:cardElevation="2dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -38,17 +38,18 @@
                     android:id="@+id/ivListaImagenBebida"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
+                    android:imageUrl="@{bebida.urlImagen}"
                     android:scaleType="centerCrop"
                     app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/ic_launcher_background" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/constraintLayout"
                     android:layout_width="0dp"
                     android:layout_height="48dp"
+                    android:background="@color/colorPrimary"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent">
@@ -59,6 +60,8 @@
                         android:layout_height="wrap_content"
                         android:padding="8dp"
                         android:text="@{bebida.nombre}"
+                        android:textColor="@android:color/white"
+                        android:textStyle="bold"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

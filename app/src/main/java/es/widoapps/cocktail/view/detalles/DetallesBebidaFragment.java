@@ -16,8 +16,8 @@ public class DetallesBebidaFragment extends Fragment {
 
     private DetallesBebidaViewModel dashboardViewModel;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
         dashboardViewModel = ViewModelProviders.of(this).get(DetallesBebidaViewModel.class);
         View root = inflater.inflate(R.layout.fragment_detalles_bebida, container, false);
 

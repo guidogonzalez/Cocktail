@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_lista_bebidas"
-        android:icon="@drawable/ic_home_black_24dp"
+        android:id="@+id/navigation_lista_alcoholicas"
+        android:icon="@drawable/ic_coctel"
         android:title="@string/titulo_alcoholicas" />
 
     <item
-        android:id="@+id/navigation_detalles_bebida"
-        android:icon="@drawable/ic_dashboard_black_24dp"
+        android:id="@+id/navigation_lista_no_alcoholicas"
+        android:icon="@drawable/ic_vaso"
         android:title="@string/titulo_no_alcoholicas" />
 
     <item
-        android:id="@+id/navigation_notifications"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/titulo_aleatoria" />
+        android:id="@+id/navigation_detalles_bebida"
+        android:icon="@drawable/ic_aleatorio"
+        android:title="@string/titulo_aleatorio" />
 
 </menu>

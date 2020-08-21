@@ -33,6 +33,8 @@ public class ListaBebidasFragment extends Fragment {
     private ListaBebidasViewModel listaBebidasViewModel;
     private ListaBebidasAdaptador listaBebidasAdaptador = new ListaBebidasAdaptador(new ArrayList<>());
 
+    private String tipoBebida;
+
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         view = inflater.inflate(R.layout.fragment_lista_bebidas, container, false);
@@ -49,11 +51,23 @@ public class ListaBebidasFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        if (getArguments() != null) {
+            tipoBebida = getArguments().getString("tipo_bebida");
+        }
+
         listaBebidasViewModel = ViewModelProviders.of(this).get(ListaBebidasViewModel.class);
-        listaBebidasViewModel.cargarRemoto("Alcoholic");
+        listaBebidasViewModel.cargarRemoto(tipoBebida);
 
         rvListaBebidas.setLayoutManager(new GridLayoutManager(getContext(), 2));
         rvListaBebidas.setAdapter(listaBebidasAdaptador);
+
+        srlListaBebidas.setOnRefreshListener(() -> {
+            rvListaBebidas.setVisibility(View.GONE);
+            tvErrorCargar.setVisibility(View.GONE);
+            pbCargar.setVisibility(View.GONE);
+            listaBebidasViewModel.cargarRemoto("Alcoholic");
+            srlListaBebidas.setRefreshing(false);
+        });
 
         observarViewModel();
     }
