@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_lista_bebidas">
+
+    <fragment
+        android:id="@+id/navigation_lista_bebidas"
+        android:name="es.widoapps.cocktail.view.bebidas.ListaBebidasFragment"
+        android:label="@string/titulo_alcoholicas"
+        tools:layout="@layout/fragment_lista_bebidas" />
+
+    <fragment
+        android:id="@+id/navigation_detalles_bebida"
+        android:name="es.widoapps.cocktail.view.detalles.DetallesBebidaFragment"
+        android:label="@string/titulo_no_alcoholicas"
+        tools:layout="@layout/fragment_detalles_bebida" />
+
+</navigation>
