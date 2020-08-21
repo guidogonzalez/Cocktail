@@ -1,6 +1,5 @@
 package es.widoapps.cocktail.api;
 
-import es.widoapps.cocktail.modelo.Bebida;
 import es.widoapps.cocktail.modelo.ListaBebidas;
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.http.GET;
@@ -14,4 +13,7 @@ public interface BebidasApi {
 
     @GET("lookup.php")
     Single<ListaBebidas> getBebida(@Query("i") String id);
+
+    @GET("popular.php")
+    Single<ListaBebidas> getBebidasPopulares();
 }

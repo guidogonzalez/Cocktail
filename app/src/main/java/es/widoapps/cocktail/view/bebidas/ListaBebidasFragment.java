@@ -20,7 +20,7 @@ import java.util.List;
 
 import es.widoapps.cocktail.R;
 import es.widoapps.cocktail.adaptador.ListaBebidasAdaptador;
-import es.widoapps.cocktail.viewmodel.ListaBebidasViewModel;
+import es.widoapps.cocktail.viewmodel.bebidas.ListaBebidasViewModel;
 
 public class ListaBebidasFragment extends Fragment {
 

@@ -31,4 +31,9 @@ public class BebidasApiServicio {
 
         return api.getBebida(id);
     }
+
+    public Single<ListaBebidas> getBebidasPopulares() {
+
+        return api.getBebidasPopulares();
+    }
 }

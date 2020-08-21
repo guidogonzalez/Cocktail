@@ -29,7 +29,7 @@ public class Util {
 
         CircularProgressDrawable cpd = new CircularProgressDrawable(context);
 
-        cpd.setStrokeWidth(10f);
+        cpd.setStrokeWidth(8f);
         cpd.setCenterRadius(50f);
         cpd.start();
 

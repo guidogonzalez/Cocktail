@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProviders;
 
 import es.widoapps.cocktail.R;
-import es.widoapps.cocktail.viewmodel.DetallesBebidaViewModel;
+import es.widoapps.cocktail.viewmodel.detalles.DetallesBebidaViewModel;
 
 public class DetallesBebidaFragment extends Fragment {
 

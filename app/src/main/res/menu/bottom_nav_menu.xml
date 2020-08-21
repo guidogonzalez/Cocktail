@@ -12,8 +12,8 @@
         android:title="@string/titulo_no_alcoholicas" />
 
     <item
-        android:id="@+id/navigation_detalles_bebida"
-        android:icon="@drawable/ic_aleatorio"
-        android:title="@string/titulo_aleatorio" />
+        android:id="@+id/navigation_lista_populares"
+        android:icon="@drawable/ic_popular"
+        android:title="@string/titulo_populars" />
 
 </menu>

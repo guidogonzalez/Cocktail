@@ -3,7 +3,7 @@
     <string name="titulo_alcoholicas">Alcoholic</string>
     <string name="titulo_no_alcoholicas">Non Alcoholic</string>
     <string name="titulo_bebida">Drink</string>
-    <string name="titulo_aleatorio">Random</string>
+    <string name="titulo_populars">Populars</string>
 
     <string name="msj_error_cargar">An error ocurred while loading data.</string>
 </resources>
