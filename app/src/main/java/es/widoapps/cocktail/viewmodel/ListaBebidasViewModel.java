@@ -1,19 +1,74 @@
 package es.widoapps.cocktail.viewmodel;
 
-import androidx.lifecycle.LiveData;
+import android.app.Application;
+import android.util.Log;
+
+import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
-public class ListaBebidasViewModel extends ViewModel {
+import java.util.List;
 
-    private MutableLiveData<String> mText;
+import es.widoapps.cocktail.api.BebidasApiServicio;
+import es.widoapps.cocktail.modelo.Bebida;
+import es.widoapps.cocktail.modelo.ListaBebidas;
+import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
+import io.reactivex.rxjava3.disposables.CompositeDisposable;
+import io.reactivex.rxjava3.observers.DisposableSingleObserver;
+import io.reactivex.rxjava3.schedulers.Schedulers;
 
-    public ListaBebidasViewModel() {
-        mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+public class ListaBebidasViewModel extends AndroidViewModel {
+
+    public MutableLiveData<List<Bebida>> bebidas = new MutableLiveData<List<Bebida>>();
+    public MutableLiveData<Boolean> bebidaErrorCargar = new MutableLiveData<Boolean>();
+    public MutableLiveData<Boolean> cargando = new MutableLiveData<Boolean>();
+
+    private BebidasApiServicio bebidasApiServicio = new BebidasApiServicio();
+    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+
+    public ListaBebidasViewModel(@NonNull Application application) {
+        super(application);
     }
 
-    public LiveData<String> getText() {
-        return mText;
+    public void cargarRemoto(String tipoBebida) {
+
+        cargando.setValue(true);
+
+        compositeDisposable.add(
+                bebidasApiServicio.getBebidas(tipoBebida)
+                        .subscribeOn(Schedulers.newThread())
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribeWith(new DisposableSingleObserver<ListaBebidas>() {
+
+                            @Override
+                            public void onSuccess(ListaBebidas bebidas) {
+
+                                bebidasRecibidas(bebidas.listaBebidas);
+                            }
+
+                            @Override
+                            public void onError(Throwable e) {
+
+                                bebidaErrorCargar.setValue(true);
+                                cargando.setValue(false);
+                                e.printStackTrace();
+
+                                Log.i("WUDUFUCK", e.getMessage());
+                            }
+                        })
+        );
+    }
+
+    private void bebidasRecibidas(List<Bebida> listaBebidas) {
+
+        bebidas.setValue(listaBebidas);
+        bebidaErrorCargar.setValue(false);
+        cargando.setValue(false);
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        compositeDisposable.clear();
     }
 }

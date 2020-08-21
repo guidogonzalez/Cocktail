@@ -1,8 +1,6 @@
 package es.widoapps.cocktail.api;
 
-import java.util.List;
-
-import es.widoapps.cocktail.modelo.Bebida;
+import es.widoapps.cocktail.modelo.ListaBebidas;
 import io.reactivex.rxjava3.core.Single;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory;
@@ -10,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class BebidasApiServicio {
 
-    private static final String URL_BASE = "https://www.thecocktaildb.com/api/json/v2/1";
+    private static final String URL_BASE = "https://www.thecocktaildb.com/api/json/v2/1/";
 
     private BebidasApi api;
 
@@ -24,12 +22,12 @@ public class BebidasApiServicio {
                 .create(BebidasApi.class);
     }
 
-    public Single<List<Bebida>> getBebidas(String tipo) {
+    public Single<ListaBebidas> getBebidas(String tipoBebida) {
 
-        return api.getBebidas(tipo);
+        return api.getBebidas(tipoBebida);
     }
 
-    public Single<Bebida> getBebida(String id) {
+    public Single<ListaBebidas> getBebida(String id) {
 
         return api.getBebida(id);
     }
