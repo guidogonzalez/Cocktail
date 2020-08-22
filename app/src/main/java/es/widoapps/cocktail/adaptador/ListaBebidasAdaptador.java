@@ -15,6 +15,7 @@ import java.util.List;
 import es.widoapps.cocktail.R;
 import es.widoapps.cocktail.databinding.ItemBebidaBinding;
 import es.widoapps.cocktail.modelo.Bebida;
+import es.widoapps.cocktail.utils.Constantes;
 
 public class ListaBebidasAdaptador extends RecyclerView.Adapter<ListaBebidasAdaptador.BebidaViewHolder> {
 
@@ -52,16 +53,16 @@ public class ListaBebidasAdaptador extends RecyclerView.Adapter<ListaBebidasAdap
             String idBebida = holder.itemView.tvListaIdBebida.getText().toString();
 
             Bundle bundle = new Bundle();
-            bundle.putString("idBebida", idBebida);
+            bundle.putString(Constantes.ID_BEBIDA, idBebida);
 
             switch (tipoBebida) {
-                case "Alcoholic":
+                case Constantes.TIPO_BEBIDA_ALCOHOLICA:
                     Navigation.findNavController(v).navigate(R.id.action_navigation_lista_alcoholicas_to_navigation_detalles_bebida, bundle);
                     break;
-                case "Non_Alcoholic":
+                case Constantes.TIPO_BEBIDA_NO_ALCOHOLICA:
                     Navigation.findNavController(v).navigate(R.id.action_navigation_lista_no_alcoholicas_to_navigation_detalles_bebida, bundle);
                     break;
-                case "Popular":
+                case Constantes.TIPO_BEBIDA_POPULAR:
                     Navigation.findNavController(v).navigate(R.id.action_navigation_lista_populares_to_navigation_detalles_bebida, bundle);
                     break;
                 default:

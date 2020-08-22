@@ -11,6 +11,7 @@ import java.util.List;
 import es.widoapps.cocktail.api.BebidasApiServicio;
 import es.widoapps.cocktail.modelo.Bebida;
 import es.widoapps.cocktail.modelo.ListaBebidas;
+import es.widoapps.cocktail.utils.Constantes;
 import io.reactivex.rxjava3.android.schedulers.AndroidSchedulers;
 import io.reactivex.rxjava3.disposables.CompositeDisposable;
 import io.reactivex.rxjava3.observers.DisposableSingleObserver;
@@ -33,7 +34,7 @@ public class ListaBebidasViewModel extends AndroidViewModel {
 
         cargando.setValue(true);
 
-        if (tipoBebida.equalsIgnoreCase("Alcoholic") || tipoBebida.equalsIgnoreCase("Non_Alcoholic")) {
+        if (tipoBebida.equalsIgnoreCase(Constantes.TIPO_BEBIDA_ALCOHOLICA) || tipoBebida.equalsIgnoreCase(Constantes.TIPO_BEBIDA_NO_ALCOHOLICA)) {
 
             compositeDisposable.add(
                     bebidasApiServicio.getBebidas(tipoBebida)
