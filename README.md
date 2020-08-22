@@ -30,8 +30,7 @@ Clonar el proyecto y compilar
   - MVVM (Modelo - Vista - VistaModelo)
 - [Retrofit2](https://github.com/square/retrofit) - construir el API REST
 - [Glide](https://github.com/bumptech/glide) - cargar imagenes.
-- [Material-Components](https://github.com/material-components/material-components-android) - Componentes de Material design como Card Views, DataBinding etc...
-- Vistas personalizadas
+- [Material-Components](https://github.com/material-components/material-components-android) - Componentes de Material design como Card Views
 
 ## Patrón de diseño
 
