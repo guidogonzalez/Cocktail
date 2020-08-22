@@ -101,7 +101,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="8dp"
-                                android:text="Carateristicas"
+                                android:text="@string/titulo_caracteristicas"
                                 android:textStyle="bold"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
@@ -172,14 +172,15 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="8dp"
-                                android:text="Ingredientes"
+                                android:text="@string/titulo_ingredientes"
                                 android:textStyle="bold"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <LinearLayout
+                                android:id="@+id/llIngredientes"
                                 android:layout_width="0dp"
-                                android:layout_height="0dp"
+                                android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="16dp"
                                 android:layout_marginBottom="8dp"
@@ -219,7 +220,7 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
                                 android:layout_marginTop="8dp"
-                                android:text="Descripcion"
+                                android:text="@string/titulo_instrucciones"
                                 android:textStyle="bold"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />

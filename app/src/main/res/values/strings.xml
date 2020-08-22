@@ -5,5 +5,9 @@
     <string name="titulo_bebida">Drink</string>
     <string name="titulo_popular">Popular</string>
 
+    <string name="titulo_caracteristicas">Features</string>
+    <string name="titulo_ingredientes">Ingredients</string>
+    <string name="titulo_instrucciones">Instructions</string>
+
     <string name="msj_error_cargar">An error ocurred while loading data.</string>
 </resources>

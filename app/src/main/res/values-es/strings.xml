@@ -1,0 +1,15 @@
+<resources>
+
+    <string name="app_name">Cóctel</string>
+    <string name="titulo_alcoholicas">Alcohólica</string>
+    <string name="titulo_no_alcoholicas">No Alcohólica</string>
+    <string name="titulo_bebida">Bebida</string>
+    <string name="titulo_popular">Popular</string>
+
+    <string name="titulo_caracteristicas">Características</string>
+    <string name="titulo_ingredientes">Ingredientes</string>
+    <string name="titulo_instrucciones">Instrucciones</string>
+
+    <string name="msj_error_cargar">Ha ocurrido un error al cargar los datos.</string>
+
+</resources>
