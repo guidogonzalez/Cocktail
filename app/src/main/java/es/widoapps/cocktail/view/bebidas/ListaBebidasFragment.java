@@ -31,7 +31,7 @@ public class ListaBebidasFragment extends Fragment {
     private ProgressBar pbCargar;
 
     private ListaBebidasViewModel listaBebidasViewModel;
-    private ListaBebidasAdaptador listaBebidasAdaptador = new ListaBebidasAdaptador(new ArrayList<>());
+    private ListaBebidasAdaptador listaBebidasAdaptador;
 
     private String tipoBebida;
 
@@ -52,11 +52,13 @@ public class ListaBebidasFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         if (getArguments() != null) {
-            tipoBebida = getArguments().getString("tipo_bebida");
+            tipoBebida = ListaBebidasFragmentArgs.fromBundle(getArguments()).getTipoBebida();
         }
 
+        listaBebidasAdaptador = new ListaBebidasAdaptador(new ArrayList<>(), tipoBebida);
+
         listaBebidasViewModel = ViewModelProviders.of(this).get(ListaBebidasViewModel.class);
-        listaBebidasViewModel.cargarRemoto(tipoBebida);
+        listaBebidasViewModel.cargarBebidasRemoto(tipoBebida);
 
         rvListaBebidas.setLayoutManager(new GridLayoutManager(getContext(), 2));
         rvListaBebidas.setAdapter(listaBebidasAdaptador);
@@ -65,7 +67,7 @@ public class ListaBebidasFragment extends Fragment {
             rvListaBebidas.setVisibility(View.GONE);
             tvErrorCargar.setVisibility(View.GONE);
             pbCargar.setVisibility(View.GONE);
-            listaBebidasViewModel.cargarRemoto("Alcoholic");
+            listaBebidasViewModel.cargarBebidasRemoto(tipoBebida);
             srlListaBebidas.setRefreshing(false);
         });
 

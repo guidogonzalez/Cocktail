@@ -29,7 +29,7 @@ public class ListaBebidasViewModel extends AndroidViewModel {
         super(application);
     }
 
-    public void cargarRemoto(String tipoBebida) {
+    public void cargarBebidasRemoto(String tipoBebida) {
 
         cargando.setValue(true);
 

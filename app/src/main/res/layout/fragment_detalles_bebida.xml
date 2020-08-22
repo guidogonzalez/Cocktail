@@ -37,11 +37,26 @@
                         android:id="@+id/ivDetallesImagen"
                         android:layout_width="0dp"
                         android:layout_height="240dp"
+                        android:backgroundTint="@android:color/darker_gray"
+                        android:imageUrl="@{bebida.urlImagen}"
                         android:scaleType="centerCrop"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         app:srcCompat="@android:drawable/sym_def_app_icon" />
+
+                    <TextView
+                        android:id="@+id/tvNombreBebida"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{bebida.nombre}"
+                        android:textColor="@android:color/white"
+                        android:textSize="16dp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toTopOf="@+id/cvCaracteristicas"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
 
                     <androidx.cardview.widget.CardView
                         android:id="@+id/cvCaracteristicas"
@@ -86,7 +101,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:text="Alcoholica"
+                                android:text="@{bebida.alcoholica}"
                                 app:layout_constraintStart_toEndOf="@+id/ivAlcoholica"
                                 app:layout_constraintTop_toTopOf="@+id/ivAlcoholica" />
 
@@ -106,7 +121,7 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:text="Vaso"
+                                android:text="@{bebida.vaso}"
                                 app:layout_constraintStart_toEndOf="@+id/ivVaso"
                                 app:layout_constraintTop_toTopOf="@+id/ivVaso" />
 
@@ -180,7 +195,7 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/tvTitutloDescripcion"
+                                android:id="@+id/tvTituloInstrucciones"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
@@ -195,26 +210,15 @@
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:padding="16dp"
-                                android:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+                                android:text="@{bebida.instrucciones}"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/tvTitutloDescripcion" />
+                                app:layout_constraintTop_toBottomOf="@+id/tvTituloInstrucciones" />
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
 
                     </androidx.cardview.widget.CardView>
-
-                    <TextView
-                        android:id="@+id/tvNombreBebida"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Nombre Bebida"
-                        android:textColor="@android:color/white"
-                        android:textStyle="bold"
-                        app:layout_constraintBottom_toBottomOf="@+id/ivDetallesImagen"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
