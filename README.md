@@ -41,10 +41,3 @@ Cocktail está basado en el patrón de diseño MVVM.
 ## API abierta
 
 Cocktail utiliza [TheCocktailDB](https://www.thecocktaildb.com/api.php) para construir el API REST.
-
-# Licencia
-```xml
-Diseñado y desarrollado por Guido González
-
-Totalmente libre de uso, en caso de uso comercial otorgar créditos.
-```
